@@ -35,9 +35,14 @@ declare(strict_types=1);
 
 namespace Infection;
 
+use Psr\Log\LoggerInterface;
+
 class Foo {
     function doFoo($x) {
-        echo $x == true ? 1 : 0;
+        if ($x == true) {
+            $y = 1;
+        } else {
+            $y = 0;
+        }
     }
 }
-
